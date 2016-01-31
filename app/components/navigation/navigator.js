@@ -96,7 +96,7 @@ class Navigator extends React.Component {
     let sceneStyle = getStyle(route.navBarStyle, this.props.navBarStyles).scene;
     return (
       <View style={sceneStyle}>
-        <Component {...route.props} {...this.getSharedProps()}
+        <Component {...route} {...this.getSharedProps()}
            navigateTo={this.navigateTo.bind(this)}
            navigator={navigator}
            dispatch={this.props.dispatch}/>
