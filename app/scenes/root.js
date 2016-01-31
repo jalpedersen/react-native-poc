@@ -5,7 +5,7 @@ import * as navigation from '../actions/navigation';
 import store from '../store';
 import Main from './main';
 
-store.dispatch(navigation.setRoutes([{component: Main, navBarStyle: 'large', title: "NavTesting"}]));
+store.dispatch(navigation.setRoutes([navigation.route(Main, {navBarStyle: 'large'})]));
 
 export default class Root extends Component {
 

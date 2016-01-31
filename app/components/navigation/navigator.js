@@ -143,8 +143,12 @@ class Navigator extends React.Component {
         if (TitleComponent) {
           return (<TitleComponent/>)
         } else {
+          let title = route.title;
+          if ( ! title ) {
+            title = route.component.getTitle && route.component.getTitle();
+          }
           return (
-            <Text style={styles.navigationTitle}>{route.title}</Text>
+            <Text style={styles.navigationTitle}>{title}</Text>
           )
         }
       }

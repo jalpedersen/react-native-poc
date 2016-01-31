@@ -7,6 +7,10 @@ import Sub from './sub';
 
 class Main extends Component {
 
+  static getTitle() {
+    return "react-native experiments"
+  }
+
   navigateTo() {
     this.props.navigator.push({component: Sub, title: 'Hi there'});
   }

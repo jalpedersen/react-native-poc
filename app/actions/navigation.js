@@ -6,3 +6,10 @@ export function setRoutes(routes) {
     routes: routes
   };
 }
+
+export function route(component, options = {}) {
+  return {
+    component: component,
+    ...options
+  }
+}
