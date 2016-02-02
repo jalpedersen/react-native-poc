@@ -104,6 +104,14 @@ class Navigator extends React.Component {
     )
   }
 
+  configureScene (route, routeStack) {
+    if (route.configureScene) {
+      return route.configureScene(route, routeStack);
+    } else {
+      return React.Navigator.SceneConfigs.FloatFromRight
+    }
+  }
+
   shouldComponentUpdate(nextProps, nextState){
     return false;
   }
@@ -119,6 +127,7 @@ class Navigator extends React.Component {
             dispatch={this.props.dispatch}
             routeMapper={this.getRouteMapper.bind(this)()}/>
         }
+        configureScene={this.configureScene.bind(this)}
         renderScene={this.renderScene.bind(this)}/>
     );
   }
